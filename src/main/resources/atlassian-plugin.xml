@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<atlassian-plugin key="${atlassian.plugin.key}" name="${project.name}" plugins-version="2"> 
+  <plugin-info> 
+    <description>${project.description}</description>  
+    <version>${project.version}</version>  
+    <vendor name="${project.organization.name}" url="${project.organization.url}"/>  
+    <param name="plugin-icon">images/pluginIcon.png</param>  
+    <param name="plugin-logo">images/pluginLogo.png</param> 
+  </plugin-info>  
+  <resource type="i18n" name="i18n" location="json-field-search"/>  
+  <web-resource key="json-field-search-resources" name="json-field-search Web Resources"> 
+    <dependency>com.atlassian.auiplugin:ajs</dependency>  
+    <resource type="download" name="json-field-search.css" location="/css/json-field-search.css"/>  
+    <resource type="download" name="json-field-search.js" location="/js/json-field-search.js"/>  
+    <resource type="download" name="images/" location="/images"/>  
+    <context>json-field-search</context> 
+  </web-resource>  
+  <jql-function name="Text Contains Json" i18n-name-key="text-contains-json.name" key="text-contains-json" class="tech.catalyzer.plugins.jql.TextContainsJson"> 
+    <description key="text-contains-json.description">The Text Contains Json Plugin</description>  
+    <fname>textContainsJson</fname>  
+    <list>true</list> 
+  </jql-function>  
+  <servlet name="Json Search Servlet" i18n-name-key="admin-page-servlet.name" key="admin-page-servlet" class="tech.catalyzer.plugins.servlet.AdminPageServlet"> 
+    <description key="admin-page-servlet.description">The Admin Page Servlet Plugin</description>  
+    <url-pattern>/adminpageservlet</url-pattern> 
+  </servlet>  
+  <web-section name="Json Search" i18n-name-key="admin-section.name" key="myadminsection" location="admin_plugins_menu" weight="5"> 
+    <label key="admin-section.label"/> 
+  </web-section>
+  <web-item name="Json Search Page" key="admin-button" section="admin_plugins_menu/myadminsection" weight="1000"> 
+    <label key="admin-button.label"/>  
+    <link linkId="admin-button-link">/plugins/servlet/adminpageservlet</link> 
+  </web-item>
+</atlassian-plugin>

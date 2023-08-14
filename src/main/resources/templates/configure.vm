@@ -1,0 +1,64 @@
+<html>
+<head>
+    <title>Configure servlet</title>
+    <meta name="decorator" content="atl.admin"/>
+    <meta name="admin.active.section" content="admin_plugins_menu/myadminsection"/>
+    <meta name="admin.active.tab" content="admin-button-link"/>
+    $webResourceManager.requireResourcesForContext("json-field-search")
+</head>
+<body>
+
+<h2>Json Key Search Page</h2>
+
+<form class="aui" method="post">
+    <div class="field-group">
+        <label for="field-select">Field name<span class="aui-icon icon-required">required</span></label>
+        <select id="field-select" name="field-select">
+            #foreach ($textField in $textFields)
+                <option value=$textField.customFieldId>$textField.customFieldName</option>
+            #end
+        </select>
+    </div>  
+
+    <div class="field-group">
+        <label for="inputJsonKey">Json Key <span class="aui-icon icon-required">required</span></label>
+        <input aria-describedby="text-input-error-message text-input-description"
+               class="text"
+               type="text"
+               id="inputJsonKey">
+    </div>
+
+    <div class="field-group">
+        <label for="inputPattern">Pattern</label>
+        <input aria-describedby="text-input-error-message text-input-description"
+               class="text"
+               type="text"
+               id="inputPattern">
+    </div>
+</form>
+
+<button class="aui-button aui-button-primary" id="find_entry">Find</button>
+
+<div id="resulttableblock">
+    <h2>Информация для отображения:</h2>
+    <p>Ключ задачи, проект, тип задачи, автор, исполнитель, тема</p>
+
+    <table class="aui" id="result-table">
+        <thead>
+        <tr>
+            <th>Ключ задачи</th>
+            <th>Проект</th>
+            <th>Тип задачи</th>
+            <th>Автор</th>
+            <th>Исполнитель</th>
+            <th>Тема</th>
+            <th>Значение поля</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- Здесь будут выводиться строки с данными -->
+        </tbody>
+    </table>
+</div>
+
+</body>
