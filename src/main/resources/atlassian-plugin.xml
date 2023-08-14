@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <atlassian-plugin key="${atlassian.plugin.key}" name="${project.name}" plugins-version="2"> 
   <plugin-info> 
     <description>${project.description}</description>  
@@ -24,11 +25,18 @@
     <description key="admin-page-servlet.description">The Admin Page Servlet Plugin</description>  
     <url-pattern>/adminpageservlet</url-pattern> 
   </servlet>  
-  <web-section name="Json Search" i18n-name-key="admin-section.name" key="myadminsection" location="admin_plugins_menu" weight="5"> 
-    <label key="admin-section.label"/> 
-  </web-section>
-  <web-item name="Json Search Page" key="admin-button" section="admin_plugins_menu/myadminsection" weight="1000"> 
-    <label key="admin-button.label"/>  
-    <link linkId="admin-button-link">/plugins/servlet/adminpageservlet</link> 
+  <web-section name="Json Search" i18n-name-key="json-search.name" key="json-search-admin-section" location="admin_plugins_menu" weight="1"> 
+    <description key="json-search.description">The Json Search Plugin</description>  
+    <label key="json-search.label"/> 
+  </web-section>  
+  <web-item name="Json Search Page" i18n-name-key="json-search-page.name" key="json-search-page" section="admin_plugins_menu/json-search-admin-section" weight="1000"> 
+    <description key="json-search-page.description">The Json Search Page Plugin</description>  
+    <label key="json-search-page.label"/>  
+    <link linkId="json-search-page-link">/plugins/servlet/adminpageservlet</link> 
+  </web-item>  
+  <web-item name="nameitem" i18n-name-key="nameitem.name" key="nameitem" section="admin" weight="1000"> 
+    <description key="nameitem.description">The nameitem Plugin</description>  
+    <label key="nameitem.label"></label>  
+    <link linkId="nameitem-link">/secure</link> 
   </web-item>
 </atlassian-plugin>

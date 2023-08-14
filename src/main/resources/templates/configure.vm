@@ -2,8 +2,8 @@
 <head>
     <title>Configure servlet</title>
     <meta name="decorator" content="atl.admin"/>
-    <meta name="admin.active.section" content="admin_plugins_menu/myadminsection"/>
-    <meta name="admin.active.tab" content="admin-button-link"/>
+    <meta name="admin.active.section" content="admin_plugins_menu/json-search-admin-section"/>
+    <meta name="admin.active.tab" content="json-search-page-link"/>
     $webResourceManager.requireResourcesForContext("json-field-search")
 </head>
 <body>
